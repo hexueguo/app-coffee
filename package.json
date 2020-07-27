@@ -8,17 +8,6 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
-  },
   "dependencies": {
     "@ant-design/pro-layout": "^5.0.12",
     "@umijs/preset-react": "1.x",
@@ -39,5 +28,26 @@
     "eslint-plugin-react": "^7.20.4",
     "pre-commit": "^1.2.2",
     "prettier": "^2.0.5"
-  }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "prettier": {
+    "trailingComma": true
+  },
+  "lint-staged": {
+    "*.{less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged"
+  ]
 }
