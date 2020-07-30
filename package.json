@@ -42,9 +42,6 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "git add"
-    ],
-    "*.{less,md,json}": [
-      "prettier --write"
     ]
   },
   "pre-commit": [
