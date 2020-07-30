@@ -1,4 +1,4 @@
-# my project
+# app-coffee
 
 * v1.0.0
   * 集成了eslint，prettier
