@@ -1,3 +1,5 @@
+module.exports = require('./config/eslint');
+
 // module.exports = {
 //     "env": {
 //         "browser": true,
@@ -23,5 +25,3 @@
 //     "rules": {
 //     }
 // };
-
-module.exports = require('./config/eslint');

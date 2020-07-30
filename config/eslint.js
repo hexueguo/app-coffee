@@ -16,7 +16,10 @@ module.exports = {
     'generator-star-spacing': [0],
     'consistent-return': [0],
     'react/forbid-prop-types': [0],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
     'global-require': [1],
     'import/prefer-default-export': [0],
     'react/jsx-no-bind': [0],
