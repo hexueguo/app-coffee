@@ -2,7 +2,7 @@ import { defineConfig } from 'umi';
 import { resolve } from 'path';
 
 export default defineConfig({
-  // devtool: "source-map", // enum
+  devtool: 'source-map', // enum
   nodeModulesTransform: {
     type: 'none',
   },

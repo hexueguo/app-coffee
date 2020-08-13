@@ -1,0 +1,12 @@
+# umi
+/src/.umi/**
+
+# default 
+build/*
+dist/*
+node_modules/*
+package.json
+
+
+# html
+/src/pages/document.ejs

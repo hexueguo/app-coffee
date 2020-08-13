@@ -12,12 +12,7 @@ class home extends React.Component<IhomeProps, IhomeState> {
   }
 
   render() {
-    return (
-      <div>
-        <div>x</div>
-        <div>x</div>
-      </div>
-    );
+    return <h1>This is Home Page!</h1>;
   }
 }
 
