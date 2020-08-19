@@ -1,5 +1,5 @@
 import { defineConfig } from 'umi';
-import { resolve } from 'path';
+import { resolve, join } from 'path';
 
 export default defineConfig({
   devtool: 'source-map', // enum
@@ -18,5 +18,12 @@ export default defineConfig({
     },
   },
 
-  alias: { '@': resolve(__dirname, '../src') }, //别名
+  alias: {
+    '@': resolve(__dirname, './src'),
+    assets: resolve(__dirname, './src/assets'),
+    utils: resolve(__dirname, './src/utils'),
+    services: resolve(__dirname, './src/services'),
+    components: join(process.cwd(), 'src', 'components'),
+    // config: resolve(__dirname, './src/config'),
+  }, //别名
 });
