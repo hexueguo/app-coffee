@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import {
   UserOutlined,
-  LaptopOutlined,
+  // LaptopOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons';
 import { useHistory } from 'umi';
 // import PropTypes from 'prop-types';
-import './BaseLayout.less';
+import './index.less';
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
@@ -71,10 +71,10 @@ function SiderMenu() {
             Home
           </Menu.Item>
         </SubMenu>
-        <SubMenu key="sub2" icon={<LaptopOutlined />} title="项目配置">
+        {/* <SubMenu key="sub2" icon={<LaptopOutlined />} title="项目配置">
           <Menu.Item key="5">option5</Menu.Item>
           <Menu.Item key="8">option8</Menu.Item>
-        </SubMenu>
+        </SubMenu> */}
       </Menu>
     </aside>
   );

@@ -1,0 +1,31 @@
+.coffee-markdowncode {
+  .coffee-markdown-icon {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px 0;
+    span {
+      transition: all 0.3s;
+    }
+  }
+  .coffee-markdown-icon-expand {
+    span {
+      transform: rotate(90deg);
+    }
+  }
+
+  .coffee-markdown {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    background: #eeeeee;
+  }
+
+  .coffee-markdown-expand {
+    // height: 600px;
+    height: 100%;
+    opacity: 1;
+    overflow: auto;
+    padding: 8px;
+  }
+}

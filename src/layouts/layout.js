@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-import BaseLayout from './BaseLayout';
+import BaseLayout from 'components/BaseLayout';
 import './Layout.less';
 
 const { Header, SiderMenu } = BaseLayout;
