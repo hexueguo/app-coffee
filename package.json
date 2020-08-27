@@ -1,4 +1,11 @@
 {
+  "name": "app-coffee",
+  "description": "coffee",
+  "version": "1.0.0",
+  "author": {
+    "name": "xueguo He",
+    "email": "791844144@qq.com"
+  },
   "private": true,
   "scripts": {
     "start": "umi dev",

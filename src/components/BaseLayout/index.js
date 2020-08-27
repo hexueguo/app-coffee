@@ -19,12 +19,32 @@ function Logo() {
   return <div className="coffee-header-logo" />;
 }
 
+function HeaderMenu() {
+  const history = useHistory();
+  const onMenuClick = ({ item }) => {
+    history.push(item.props.link);
+  };
+  return (
+    <Menu
+      mode="horizontal"
+      theme="dark"
+      className="coffee-header-menu"
+      onClick={onMenuClick}
+    >
+      <Menu.Item link="/home">首页</Menu.Item>
+      <Menu.Item link="/node">NodeJS</Menu.Item>
+      <Menu.Item link="/demo">Demo</Menu.Item>
+    </Menu>
+  );
+}
+
 function LayoutHeader() {
   return (
     <Header className="coffee-header">
       <div className="coffee-header-left">
         <Logo />
         <div className="coffee-header-text">C o f f e e</div>
+        <HeaderMenu />
       </div>
       <div className="coffee-header-right">
         <UserOutlined className="coffee-header-user" />
@@ -67,9 +87,9 @@ function SiderMenu() {
           <Menu.Item key="1" link="/demo">
             Demo
           </Menu.Item>
-          <Menu.Item key="2" link="/home">
+          {/* <Menu.Item key="2" link="/home">
             Home
-          </Menu.Item>
+          </Menu.Item> */}
         </SubMenu>
         {/* <SubMenu key="sub2" icon={<LaptopOutlined />} title="项目配置">
           <Menu.Item key="5">option5</Menu.Item>
