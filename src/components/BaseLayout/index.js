@@ -64,7 +64,7 @@ function SiderMenu() {
   return (
     <aside
       className={`coffee-layout-sider${
-        collapse ? 'coffee-layout-sider-collapse' : ''
+        collapse ? ' coffee-layout-sider-collapse' : ''
       }`}
     >
       <Menu
