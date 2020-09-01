@@ -15,7 +15,7 @@ function Demo() {
 
   return (
     <div className="coffee-demo">
-      <h1>Demo</h1>
+      <h1>demo</h1>
       <CompBox title="Logger Hoc">
         <Logger test="test" />
       </CompBox>

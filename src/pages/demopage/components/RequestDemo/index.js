@@ -6,7 +6,7 @@ import { getTestLoading } from '../../services';
 import md from './index.md';
 import './index.less';
 
-function index() {
+function Index() {
   const [loading, setLoading] = useState(false);
   const [info, setInfo] = useState({});
 
@@ -42,4 +42,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

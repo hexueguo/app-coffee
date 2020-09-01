@@ -6,7 +6,7 @@ export default () => {
   const history = useHistory();
 
   useEffect(() => {
-    history.push('/Demo');
+    history.push('/demo');
   }, []);
 
   return <Loading />;

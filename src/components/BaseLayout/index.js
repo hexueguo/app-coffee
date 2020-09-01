@@ -33,7 +33,7 @@ function HeaderMenu() {
     >
       <Menu.Item link="/home">首页</Menu.Item>
       <Menu.Item link="/node">NodeJS</Menu.Item>
-      <Menu.Item link="/demo">Demo</Menu.Item>
+      <Menu.Item link="/demo">demo</Menu.Item>
     </Menu>
   );
 }
@@ -86,7 +86,7 @@ function SiderMenu() {
         </div>
         <SubMenu key="sub1" icon={<UserOutlined />} title="基础页面">
           <Menu.Item key="1" link="/demo">
-            Demo
+            demo
           </Menu.Item>
           {/* <Menu.Item key="2" link="/home">
             Home

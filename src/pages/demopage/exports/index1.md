@@ -1,6 +1,6 @@
 ## export 与 export default区别
 
-### export 导出是放到{}中,也可以直接导出变量
+### 1、export 导出是放到{}中,也可以直接导出变量
 
 ```
 const a = 10;
@@ -9,7 +9,7 @@ export {a, b};
 export const c = 30;
 ```
 
-### export default 直接导出变量；
+### 2、export default 直接导出变量；
 
 ### 但在同一文件中只能是使用一次，否则会抛出错误提示 Syntax Error: SyntaxError: Parsing error: Only one default export allowed per module.
 ```
@@ -24,7 +24,7 @@ const b = () =>{
 export default b;
 ```
 
-### export 配合import 使用
+### 3、export 配合import 使用
 
 ```
 // index.js
@@ -41,7 +41,7 @@ console.log(c); // 30
 
 ```
 
-### export default 配合import 使用
+### 4、export default 配合import 使用
 ```
 // index.js
 const a = 10
@@ -65,7 +65,7 @@ console.log(b()); // this is B!
 
 ```
 
-### 还有一种 import , 使用as关键字
+### 5、还有一种 import , 使用as关键字
 ```
 // index.js
 const a = 10;
