@@ -88,9 +88,9 @@ function SiderMenu() {
           <Menu.Item key="1" link="/demo">
             demo
           </Menu.Item>
-          {/* <Menu.Item key="2" link="/home">
-            Home
-          </Menu.Item> */}
+          <Menu.Item key="2" link="/doc">
+            文档
+          </Menu.Item>
         </SubMenu>
         {/* <SubMenu key="sub2" icon={<LaptopOutlined />} title="项目配置">
           <Menu.Item key="5">option5</Menu.Item>

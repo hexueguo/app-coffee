@@ -17,3 +17,5 @@ http.createServer(function (request, response) {
 }).listen(8888);
 
 ```
+
+这样子，一个node服务就启动了。
