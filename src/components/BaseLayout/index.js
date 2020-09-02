@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import {
   UserOutlined,
-  LaptopOutlined,
+  // LaptopOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons';
 import { useHistory } from 'umi';
 // import PropTypes from 'prop-types';
-import './BaseLayout.less';
+import './index.less';
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
@@ -19,12 +19,32 @@ function Logo() {
   return <div className="coffee-header-logo" />;
 }
 
+function HeaderMenu() {
+  const history = useHistory();
+  const onMenuClick = ({ item }) => {
+    history.push(item.props.link);
+  };
+  return (
+    <Menu
+      mode="horizontal"
+      theme="dark"
+      className="coffee-header-menu"
+      onClick={onMenuClick}
+    >
+      <Menu.Item link="/home">首页</Menu.Item>
+      <Menu.Item link="/node">NodeJS</Menu.Item>
+      <Menu.Item link="/demo">demo</Menu.Item>
+    </Menu>
+  );
+}
+
 function LayoutHeader() {
   return (
     <Header className="coffee-header">
       <div className="coffee-header-left">
         <Logo />
         <div className="coffee-header-text">C o f f e e</div>
+        <HeaderMenu />
       </div>
       <div className="coffee-header-right">
         <UserOutlined className="coffee-header-user" />
@@ -43,8 +63,9 @@ function SiderMenu() {
 
   return (
     <aside
-      className={`coffee-layout-sider ${collapse &&
-        'coffee-layout-sider-collapse'}`}
+      className={`coffee-layout-sider${
+        collapse ? ' coffee-layout-sider-collapse' : ''
+      }`}
     >
       <Menu
         className="coffee-layout-silder-menu"
@@ -65,16 +86,16 @@ function SiderMenu() {
         </div>
         <SubMenu key="sub1" icon={<UserOutlined />} title="基础页面">
           <Menu.Item key="1" link="/demo">
-            Demo
+            demo
           </Menu.Item>
-          <Menu.Item key="2" link="/home">
-            Home
+          <Menu.Item key="2" link="/doc">
+            文档
           </Menu.Item>
         </SubMenu>
-        <SubMenu key="sub2" icon={<LaptopOutlined />} title="项目配置">
+        {/* <SubMenu key="sub2" icon={<LaptopOutlined />} title="项目配置">
           <Menu.Item key="5">option5</Menu.Item>
           <Menu.Item key="8">option8</Menu.Item>
-        </SubMenu>
+        </SubMenu> */}
       </Menu>
     </aside>
   );

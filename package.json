@@ -1,4 +1,11 @@
 {
+  "name": "app-coffee",
+  "description": "coffee",
+  "version": "1.0.0",
+  "author": {
+    "name": "xueguo He",
+    "email": "791844144@qq.com"
+  },
   "private": true,
   "scripts": {
     "start": "umi dev",
@@ -18,6 +25,7 @@
     "lint-staged": "^10.0.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-markdown": "^4.3.1",
     "typescript": "^3.9.7",
     "umi": "^3.2.10",
     "umi-request": "1.2.19",
@@ -36,6 +44,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.4",
+    "eslint-plugin-react-hooks": "^4.1.0",
     "mockjs": "^1.1.0",
     "pre-commit": "^1.2.2"
   },
