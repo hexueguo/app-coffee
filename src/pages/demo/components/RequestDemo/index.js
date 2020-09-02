@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Spin } from 'antd';
-import CompBox from 'components/CompBox';
 import MarkDownCode from 'components/MarkDownCode';
 import { getTestLoading } from '../../services';
 import md from './index.md';
@@ -19,7 +18,7 @@ function Index() {
   };
 
   return (
-    <CompBox title="请求">
+    <>
       <Button onClick={requestTest}>请求</Button>
       <Spin spinning={loading}>
         {info && info.name ? (
@@ -38,7 +37,7 @@ function Index() {
       </div>
       <MarkDown className="coffee-demo-markdown" source={md} /> */}
       <MarkDownCode source={md} />
-    </CompBox>
+    </>
   );
 }
 

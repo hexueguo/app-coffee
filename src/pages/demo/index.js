@@ -5,6 +5,7 @@ import Logger from './components/Logger';
 import RequestDemo from './components/RequestDemo';
 import { getTest } from './services';
 import './index.less';
+import RenderProps from './components/RenderProps';
 
 Demo.propTypes = {};
 
@@ -19,7 +20,13 @@ function Demo() {
       <CompBox title="Logger Hoc">
         <Logger test="test" />
       </CompBox>
-      <RequestDemo />
+      <CompBox title="request 请求">
+        <RequestDemo />
+      </CompBox>
+
+      <CompBox title="Render Props">
+        <RenderProps />
+      </CompBox>
     </div>
   );
 }
