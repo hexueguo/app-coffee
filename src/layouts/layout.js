@@ -8,10 +8,12 @@ const { Header, SiderMenu } = BaseLayout;
 // const { Content } = Layout;
 
 const Layouts = ({ children, location }) => {
-  const { fullPage = [] } = config;
+  const { fullPage = [], fullWidow = [] } = config;
   const { pathname } = location;
 
-  return (
+  return fullWidow.includes(pathname) ? (
+    <Layout className="coffee-layout">{children}</Layout>
+  ) : (
     <Layout className="coffee-layout">
       <Header />
       {!fullPage.includes(pathname) ? (
