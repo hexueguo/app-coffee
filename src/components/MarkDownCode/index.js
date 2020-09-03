@@ -12,7 +12,7 @@ MarkDownCode.defaultProps = {
   source: '',
 };
 
-function MarkDownCode({ source }) {
+function MarkDownCode({ source, ...otherProps }) {
   const [expand, setExpand] = useState(false);
 
   const toggle = () => {
@@ -33,6 +33,7 @@ function MarkDownCode({ source }) {
       <MarkDown
         className={`coffee-markdown ${expand ? 'coffee-markdown-expand' : ''}`}
         source={source}
+        {...otherProps}
       />
     </div>
   );

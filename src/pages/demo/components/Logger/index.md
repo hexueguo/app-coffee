@@ -1,8 +1,25 @@
+```
+import React, { useEffect } from 'react';
+
+// Logger Hoc 日志切面
+const Logger = (otherProps) => {
+  return (WrappedComponent) => {
+    return (props) => {
+      useEffect(() => {
+        console.log('otherProps', otherProps);
+        console.log('props', props);
+      }, []);
+      return <WrappedComponent {...props} {...otherProps} />;
+    };
+  };
+};
+
+export default Logger;
+
+------
+
 import React from 'react';
 import loggerHoc from 'components/Hoc/Logger';
-import MarkDownCode from 'components/MarkDownCode';
-import md from './index.md';
-import './index.less';
 
 function Logger({ log, des }) {
   return (
@@ -18,3 +35,5 @@ function Logger({ log, des }) {
 export default loggerHoc({ log: 'Log has been printed', des: '日志已被打印' })(
   Logger
 );
+
+```

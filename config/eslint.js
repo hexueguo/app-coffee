@@ -15,7 +15,9 @@ module.exports = {
   plugins: ['react-hooks'], // react-hooks检查
   rules: {
     'react-hooks/rules-of-hooks': 'error', // 检查 Hook 的规则
-    'react-hooks/exhaustive-deps': 'warn', // 检查 effect 的依赖
+    'react-hooks/exhaustive-deps': 'off', // 检查 effect 的依赖
+
+    'react/jsx-props-no-spreading': ['warn', { custom: 'ignore' }], // 关闭JSX no-spreading验证
 
     'generator-star-spacing': [0],
     'consistent-return': [0],

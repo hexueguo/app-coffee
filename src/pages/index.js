@@ -6,7 +6,9 @@ export default () => {
   const history = useHistory();
 
   useEffect(() => {
-    history.push('/demo');
+    setTimeout(() => {
+      history.push('/demo');
+    }, 1000);
   }, []);
 
   return <Loading />;
