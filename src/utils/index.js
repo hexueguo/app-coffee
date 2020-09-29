@@ -91,3 +91,31 @@ export const throttle = (fn, wait = 1000, ...rest) => {
     }
   };
 };
+
+/**
+ * 文件下载请求
+ * @param {*} url 文件地址
+ * @param {*} fileName 文件名
+ */
+export function getFile(url, fileName) {
+  const httpRequest = new XMLHttpRequest();
+  // 指定响应类型，这决定了浏览器对返回内容的解析方式，设置为空或者text会作为字符解析、json会作为json解析，blob和arraybuffer会作为字节流解析
+  httpRequest.responseType = 'arraybuffer';
+  httpRequest.open('GET', url, true);
+  httpRequest.onload = () => {
+    if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+      // 只有responseType为空或者text，才会使用responseText获取内容，其他情况                        httpRequest.response就是你需要的不含http头的返回内容
+      const content = httpRequest.response;
+      const elink = document.createElement('a');
+      elink.download = fileName;
+      elink.style.display = 'none';
+      const blob = new Blob([content]);
+      // 创建指向内存中字节流的链接
+      elink.href = URL.createObjectURL(blob);
+      document.body.appendChild(elink);
+      elink.click();
+      document.body.removeChild(elink);
+    }
+  };
+  httpRequest.send();
+}

@@ -18,7 +18,7 @@ const Layouts = ({ children, location }) => {
       <Header />
       {!fullPage.includes(pathname) ? (
         <Layout className="coffee-layout-body">
-          <SiderMenu />
+          <SiderMenu location={location} />
           <main className="coffee-layout-content">{children}</main>
         </Layout>
       ) : (

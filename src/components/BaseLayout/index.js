@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Menu } from 'antd';
 import {
   UserOutlined,
@@ -6,11 +6,12 @@ import {
   MenuUnfoldOutlined,
 } from '@ant-design/icons';
 import { useHistory } from 'umi';
+import { menus } from './config';
 // import PropTypes from 'prop-types';
 import './index.less';
 
 const { Header } = Layout;
-const { SubMenu } = Menu;
+const { SubMenu, Item } = Menu;
 
 function BaseLayout() {}
 BaseLayout.propTypes = {};
@@ -53,12 +54,62 @@ function LayoutHeader() {
   );
 }
 
-function SiderMenu() {
+// 递归渲染menus
+const renderMenus = (list) => {
+  return list.map((el) => {
+    const { key, title, icon, link, children } = el;
+    if (children && children.length > 0) {
+      return (
+        <SubMenu key={key} icon={icon} title={title}>
+          {renderMenus(children)}
+        </SubMenu>
+      );
+    } else {
+      return (
+        <Item key={key} icon={icon} link={link}>
+          {title}
+        </Item>
+      );
+    }
+  });
+};
+
+function SiderMenu({ location }) {
   const [collapse, setCollapse] = useState(false);
+  const [selectKeys, setSelectKeys] = useState([]);
   const history = useHistory();
 
-  const onMenuClick = ({ item }) => {
+  useEffect(() => {
+    findKeys(location.pathname);
+  }, []);
+
+  // 刷新页面时，根据路由选中对应的菜单
+  const findKeys = (link) => {
+    let selectedItem = {};
+
+    const select = (list) => {
+      list.find((el) => {
+        const { children } = el;
+        if (children && children.length > 0) {
+          select(children);
+          return false;
+        } else {
+          if (link.indexOf(el.link) > -1) {
+            selectedItem = el;
+          }
+          return false;
+        }
+      });
+    };
+    select(menus); // 遍历菜单,根据当前路由匹配选中的菜单
+
+    const { key } = selectedItem || {};
+    setSelectKeys([key]);
+  };
+
+  const onMenuClick = ({ item, key }) => {
     history.push(item.props.link);
+    setSelectKeys([key]);
   };
 
   return (
@@ -71,10 +122,9 @@ function SiderMenu() {
         className="coffee-layout-silder-menu"
         mode="inline"
         theme="dark"
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
         inlineCollapsed={collapse}
         onClick={onMenuClick}
+        selectedKeys={selectKeys}
       >
         <div className="coffee-layout-silder-button">
           <MenuUnfoldOutlined
@@ -84,18 +134,7 @@ function SiderMenu() {
             }}
           />
         </div>
-        <SubMenu key="sub1" icon={<UserOutlined />} title="基础页面">
-          <Menu.Item key="1" link="/demo">
-            demo
-          </Menu.Item>
-          <Menu.Item key="2" link="/doc">
-            文档
-          </Menu.Item>
-        </SubMenu>
-        {/* <SubMenu key="sub2" icon={<LaptopOutlined />} title="项目配置">
-          <Menu.Item key="5">option5</Menu.Item>
-          <Menu.Item key="8">option8</Menu.Item>
-        </SubMenu> */}
+        {renderMenus(menus)}
       </Menu>
     </aside>
   );
