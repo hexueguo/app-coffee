@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
+import { Link } from 'umi';
 import CompBox from 'components/CompBox';
 import Logger from './components/Logger';
 import RequestDemo from './components/RequestDemo';
@@ -26,6 +27,10 @@ function Demo() {
 
       <CompBox title="Render Props">
         <RenderProps />
+      </CompBox>
+
+      <CompBox title="瀑布流">
+        <Link to="/demo/waterfall">瀑布流</Link>
       </CompBox>
     </div>
   );

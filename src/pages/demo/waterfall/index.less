@@ -1,0 +1,21 @@
+.root {
+  overflow: auto;
+  .grid {
+    // display: grid;
+    // grid-auto-flow: row;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .cardColums {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
