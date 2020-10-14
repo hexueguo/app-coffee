@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'umi';
 import { get } from '@/utils/fetch';
-import CompBox from 'components/CompBox';
+import CompBox from '@/components/CompBox';
 import Logger from './components/Logger';
 import RequestDemo from './components/RequestDemo';
 import { getTest } from './services';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Spin } from 'antd';
-import MarkDownCode from 'components/MarkDownCode';
+import MarkDownCode from '@/components/MarkDownCode';
 import { getTestLoading } from '../../services';
 import md from './index.md';
 import './index.less';
