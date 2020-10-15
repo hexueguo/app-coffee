@@ -84,15 +84,16 @@ function WaterfallFlow(props) {
         (document.getElementById('waterfall-grid').clientWidth - columsGap) / 2;
 
       data.forEach((item) => {
+        const { imgUrl, type, title = '' } = item;
         // 校验属性
         const { flag, errorCard } = checkAttr(item);
         if (flag) {
           // 后台加载图片资源，计算图片显示高度
           // eslint-disable-next-line no-undef
           const img = new Image();
-          img.src = item.imgUrl; // 图片
+          img.src = imgUrl; // 图片
           // 计算文字部分高度
-          const textHeight = template[item.type](item.title, cardWidth);
+          const textHeight = template[type](title, cardWidth);
 
           img.onload = (imgDom) => {
             // 按比例计算每个图片显示的高度
@@ -181,7 +182,7 @@ function WaterfallFlow(props) {
   return (
     <div
       className={ss.root}
-      style={{ rootStyle }}
+      style={{ ...rootStyle }}
       // 根据是否有
       onScroll={onScrollNext ? (event) => onScroll(event.target) : undefined}
     >

@@ -136,3 +136,14 @@ export const classnames = (...args) => {
     })
     .join(' ');
 };
+
+// 获取地址栏参数值
+export const getQueryValue = (key) => {
+  const regExp = new RegExp(`(^|&)${key}=([^&]*)(&|$)`);
+  const params = window.location.search.substring(1);
+  const url = params.match(regExp);
+  if (url !== null) {
+    return unescape(url[2]);
+  }
+  return null;
+};

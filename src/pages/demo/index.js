@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { Link } from 'umi';
-import { get } from '@/utils/fetch';
-import CompBox from 'components/CompBox';
+// import { get } from '@/utils/fetch';
+import CompBox from '@/components/CompBox';
 import Logger from './components/Logger';
 import RequestDemo from './components/RequestDemo';
 import { getTest } from './services';
@@ -15,10 +15,10 @@ function Demo() {
   useEffect(() => {
     getTest('/test', { time: new Date().toDateString() });
 
-    get('/redisTest').then((res) => {
-      // eslint-disable-next-line no-console
-      console.log('res', res);
-    });
+    // get('/redisTest').then((res) => {
+    //   // eslint-disable-next-line no-console
+    //   console.log('res', res);
+    // });
   }, []);
 
   return (

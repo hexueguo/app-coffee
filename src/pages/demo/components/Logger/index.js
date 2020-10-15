@@ -1,6 +1,6 @@
 import React from 'react';
-import loggerHoc from 'components/Hoc/Logger';
-import MarkDownCode from 'components/MarkDownCode';
+import loggerHoc from '@/components/Hoc/Logger';
+import MarkDownCode from '@/components/MarkDownCode';
 import md from './index.md';
 import './index.less';
 
